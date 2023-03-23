@@ -109,8 +109,8 @@ Bad Request Bare CR or LF found in header line "Cookie: username=test ;flag=NTO{
     flag[0] ^= flag[2];
     compare(flag[0], const1);
     ....
-    flag[0] &= flag[6];
-    compare(flag[0], const6);
+    flag[0] &= flag[7];
+    compare(flag[0], const7);
 
 В данном случае можно легко восстановить операции xor, т.к. они однозначно обратимы. Получаем флаг (неизвестные части - знак вопроса)
 
