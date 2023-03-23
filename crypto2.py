@@ -1,0 +1,22 @@
+from requests import get
+from Crypto.Util.number import long_to_bytes
+
+n = 72602485028662778320138300020356689428045425003812898498152056860551086870653337347760892781350698688150234914432248076351310791121925564276798444113814475144754058131094435252225272256128417508173613149659932403538561403579736987713121339003044994645100718849528624650245340235396498952822343382714489681551
+
+def f():
+	cur_i, ans = 0, ''
+	res = None
+	while True:
+		for _ in range(10):
+			res = get(f'http://10.10.25.10:1177/guess_bit?bit={cur_i}').json()
+			if 'error' in res:
+				return ans
+			if res['guess'] < n // 2:
+				ans += '1'
+				cur_i += 1
+				break
+		else:
+			cur_i += 1
+			ans += '0'
+
+print(long_to_bytes(int(f(), 2)).decode('utf-8'))
