@@ -128,8 +128,8 @@ Bad Request Bare CR or LF found in header line "Cookie: username=test ;flag=NTO{
    
 он поднял права до root. После заражения, злоумышленник загрузил кейлоггер logkeys. В истории команд можно найти путь до исполняемого файла кейлоггера: /home/sergey/Downloads/build/src/logkeys. Загрузив файл в любой дизассемблер, можно быстро найти как кейлоггер берет путь до файла лога. В кейлоггере используется простой XOR по ключу. Расшифровав путь, получаем /var/log/logkeys.log. Там и хранятся логи. Это также видно из истории команд bash_history. В файле /var/log/logkeys.log злоумышленник нашел логи нажатий клавиш, откуда нашел пароль от keepass2: 
 
-      1_D0N7_N0W_WHY_N07_M4Y83_345Y
+    1_D0N7_N0W_WHY_N07_M4Y83_345Y
 
 Запустив keepass2 и введя этот пароль, можно найти пароль от "windows rdp": 
 
-      SecretP@ss0rdMayby_0rNot&
+    SecretP@ss0rdMayby_0rNot&
